@@ -1,17 +1,12 @@
 using System;
 using UnityEngine;
 
-/// <summary>
-/// Nice, easy to understand enum-based game manager. For larger and more complex games, look into
-/// state machines. But this will serve just fine for most games.
-/// </summary>
 public class ExampleGameManager : StaticInstance<ExampleGameManager> {
     public static event Action<GameState> OnBeforeStateChanged;
     public static event Action<GameState> OnAfterStateChanged;
 
     public GameState State { get; private set; }
-
-    // Kick the game off with the first state
+    
     void Start() => ChangeState(GameState.Starting);
 
     public void ChangeState(GameState newState) {
@@ -28,11 +23,6 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager> {
             case GameState.SpawningEnemies:
                 HandleSpawningEnemies();
                 break;
-            case GameState.HeroTurn:
-                HandleHeroTurn();
-                break;
-            case GameState.EnemyTurn:
-                break;
             case GameState.Win:
                 break;
             case GameState.Lose:
@@ -47,10 +37,6 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager> {
     }
 
     private void HandleStarting() {
-        // Do some start setup, could be environment, cinematics etc
-
-        // Eventually call ChangeState again with your next state
-        
         ChangeState(GameState.SpawningHeroes);
     }
 
@@ -62,17 +48,9 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager> {
 
     private void HandleSpawningEnemies() {
         
-        // Spawn enemies
-        
         ChangeState(GameState.HeroTurn);
     }
-
-    private void HandleHeroTurn() {
-        // If you're making a turn based game, this could show the turn menu, highlight available units etc
-        
-        // Keep track of how many units need to make a move, once they've all finished, change the state. This could
-        // be monitored in the unit manager or the units themselves.
-    }
+    
 }
 
 /// <summary>

@@ -1,9 +1,7 @@
 using System;
 using UnityEngine;
 
-/// <summary>
-/// Create a scriptable hero 
-/// </summary>
+
 [CreateAssetMenu(fileName = "New Scriptable Example")]
 public class ScriptableExampleHero : ScriptableExampleUnitBase {
     public ExampleHeroType HeroType;
