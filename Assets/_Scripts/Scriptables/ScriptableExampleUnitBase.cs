@@ -10,7 +10,6 @@ public abstract class ScriptableExampleUnitBase : ScriptableObject {
     public HeroUnitBase Prefab;
     
     public string Description;
-    public Sprite MenuSprite;
 }
 
 

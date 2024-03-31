@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResourceSystem : StaticInstance<ResourceSystem> {
     public List<ScriptableExampleHero> ExampleHeroes { get; private set; }
-    private Dictionary<ExampleHeroType, ScriptableExampleHero> _ExampleHeroesDict;
+    private Dictionary<CarType, ScriptableExampleHero> _ExampleHeroesDict;
 
     protected override void Awake() {
         base.Awake();
@@ -13,9 +13,9 @@ public class ResourceSystem : StaticInstance<ResourceSystem> {
 
     private void AssembleResources() {
         ExampleHeroes = Resources.LoadAll<ScriptableExampleHero>("ExampleHeroes").ToList();
-        _ExampleHeroesDict = ExampleHeroes.ToDictionary(r => r.HeroType, r => r);
+        _ExampleHeroesDict = ExampleHeroes.ToDictionary(r => r.CarType, r => r);
     }
 
-    public ScriptableExampleHero GetExampleHero(ExampleHeroType t) => _ExampleHeroesDict[t];
+    public ScriptableExampleHero GetExampleHero(CarType t) => _ExampleHeroesDict[t];
     public ScriptableExampleHero GetRandomHero() => ExampleHeroes[Random.Range(0, ExampleHeroes.Count)];
 }   

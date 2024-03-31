@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class ExampleGameManager : StaticInstance<ExampleGameManager> {
+public class GameStateMachine : StaticInstance<GameStateMachine> {
     public static event Action<GameState> OnBeforeStateChanged;
     public static event Action<GameState> OnAfterStateChanged;
 
@@ -23,6 +23,8 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager> {
             case GameState.SpawningEnemies:
                 HandleSpawningEnemies();
                 break;
+            case GameState.GameProgress:
+                break;
             case GameState.Win:
                 break;
             case GameState.Lose:
@@ -41,29 +43,24 @@ public class ExampleGameManager : StaticInstance<ExampleGameManager> {
     }
 
     private void HandleSpawningHeroes() {
-        ExampleUnitManager.Instance.SpawnHeroes();
+        //ExampleUnitManager.Instance.SpawnHeroes();
         
         ChangeState(GameState.SpawningEnemies);
     }
 
     private void HandleSpawningEnemies() {
         
-        ChangeState(GameState.HeroTurn);
+        ChangeState(GameState.GameProgress);
     }
     
 }
 
-/// <summary>
-/// This is obviously an example and I have no idea what kind of game you're making.
-/// You can use a similar manager for controlling your menu states or dynamic-cinematics, etc
-/// </summary>
 [Serializable]
 public enum GameState {
     Starting = 0,
     SpawningHeroes = 1,
     SpawningEnemies = 2,
-    HeroTurn = 3,
-    EnemyTurn = 4,
-    Win = 5,
-    Lose = 6,
+    GameProgress = 3,
+    Win = 4,
+    Lose = 5,
 }
