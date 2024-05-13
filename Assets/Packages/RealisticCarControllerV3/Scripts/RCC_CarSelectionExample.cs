@@ -178,6 +178,7 @@ public class RCC_CarSelectionExample : MonoBehaviour {
     public void OpenScene() {
 
         //	Loads next scene.
+        SelectCarSystem.Instance.SelectedCar = selectedIndex;
         SceneManager.LoadScene(nextScene);
 
     }

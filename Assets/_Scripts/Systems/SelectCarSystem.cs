@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class SelectCarSystem : StaticInstance<SelectCarSystem>
 {
-    
+    public int SelectedCar { get; set; }
 }
