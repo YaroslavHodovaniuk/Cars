@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 public class UnitFactory : StaticInstance<UnitFactory>
 {
-    [SerializeField] private Transform _spawnPosition;
+    /*[SerializeField] private Transform _spawnPosition;
     
     public void SpawnHeroes() {
         SpawnUnit(CarType.Coupe, _spawnPosition.position, _spawnPosition.rotation);
@@ -17,5 +18,11 @@ public class UnitFactory : StaticInstance<UnitFactory>
         var stats = tarodevScriptable.BaseStats;
 
         spawned.SetStats(stats);
+    }*/
+    [SerializeField] private Transform _spawnPosition;
+    
+    private void Start()
+    {
+        RCC.SpawnRCC(RCC_DemoVehicles.Instance.vehicles[SelectCarSystem.Instance.SelectedCar], _spawnPosition.position, _spawnPosition.rotation, true, true, true);
     }
 }
