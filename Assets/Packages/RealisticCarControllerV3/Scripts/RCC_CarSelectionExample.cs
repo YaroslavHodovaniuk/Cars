@@ -117,24 +117,9 @@ public class RCC_CarSelectionExample : MonoBehaviour {
     /// Registering the spawned vehicle as player vehicle, enabling controllable.
     /// </summary>
     public void SelectVehicle() {
-
-        // Registers the vehicle as player vehicle.
-        RCC.RegisterPlayerVehicle(_spawnedVehicles[selectedIndex]);
-
-        // Starts engine and enabling controllable when selected.
-        _spawnedVehicles[selectedIndex].StartEngine();
-        _spawnedVehicles[selectedIndex].SetCanControl(true);
-
-        // Save the selected vehicle for instantianting it on next scene.
-        PlayerPrefs.SetInt("SelectedRCCVehicle", selectedIndex);
-
-        // If RCC Camera is choosen, it will disable RCC_CameraCarSelection script. This script was used for orbiting camera.
-        if (RCCCamera) {
-
-            if (RCCCamera.GetComponent<RCC_CameraCarSelection>())
-                RCCCamera.GetComponent<RCC_CameraCarSelection>().enabled = false;
-
-        }
+        
+        //check
+        //RCC.RegisterPlayerVehicle(_spawnedVehicles[selectedIndex]);
 
         if (nextScene != "")
             OpenScene();
