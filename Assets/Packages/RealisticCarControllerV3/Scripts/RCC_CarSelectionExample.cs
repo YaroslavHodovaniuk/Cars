@@ -7,10 +7,13 @@
 //
 //----------------------------------------------
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 /// <summary>
 /// A simple example manager for how the car selection scene should work. 
@@ -24,6 +27,10 @@ public class RCC_CarSelectionExample : MonoBehaviour {
 
     public RCC_Camera RCCCamera;        // Enabling / disabling camera selection script on RCC Camera if choosen.
     public string nextScene;        //  Name of the target scene when we select the vehicle.
+    
+    [SerializeField] private Button _interactButton;
+    private Image _interactButtonImage;
+    private Text _interactButtonText;
 
     private void Start() {
 
@@ -34,6 +41,20 @@ public class RCC_CarSelectionExample : MonoBehaviour {
         // First, we are instantiating all vehicles and store them in _spawnedVehicles list.
         CreateVehicles();
 
+        _interactButton.onClick.AddListener(SelectVehicle);
+        _interactButtonImage = _interactButton.GetComponent<Image>();
+        _interactButtonText = _interactButton.GetComponentInChildren<Text>();
+    }
+    
+    private void CanSelectVehicle()
+    {
+        _interactButtonImage.color = Color.green;
+        _interactButtonText.text = "Select";
+    }
+
+    private void OnDestroy()
+    {
+        _interactButton.onClick.RemoveListener(SelectVehicle);
     }
 
     /// <summary>
@@ -123,7 +144,7 @@ public class RCC_CarSelectionExample : MonoBehaviour {
 
         if (nextScene != "")
             OpenScene();
-
+        
     }
 
     /// <summary>
