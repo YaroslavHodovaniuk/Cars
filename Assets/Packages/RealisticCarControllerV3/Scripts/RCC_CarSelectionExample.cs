@@ -93,7 +93,10 @@ public class RCC_CarSelectionExample : MonoBehaviour {
     public void NextVehicle() {
 
         selectedIndex++;
-
+        if (selectedIndex == 1)
+        {
+            CanSelectVehicle();
+        }
         // If index exceeds maximum, return to 0.
         if (selectedIndex > _spawnedVehicles.Count - 1)
             selectedIndex = 0;
@@ -108,7 +111,12 @@ public class RCC_CarSelectionExample : MonoBehaviour {
     public void PreviousVehicle() {
 
         selectedIndex--;
-
+        //check you have car
+        if (selectedIndex == 1)
+        {
+            CanSelectVehicle();
+        }
+        
         // If index is below 0, return to maximum.
         if (selectedIndex < 0)
             selectedIndex = _spawnedVehicles.Count - 1;

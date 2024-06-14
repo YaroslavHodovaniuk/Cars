@@ -43,7 +43,7 @@ public class GameStateMachine : StaticInstance<GameStateMachine> {
     }
 
     private void HandleSpawningHeroes() {
-        //ExampleUnitManager.Instance.SpawnHeroes();
+        UnitFactory.Instance.SpawnHeroes();
         
         ChangeState(GameState.SpawningEnemies);
     }
