@@ -10,6 +10,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -18,7 +19,7 @@ using UnityEngine.UI;
 /// <summary>
 /// A simple example manager for how the car selection scene should work. 
 /// </summary>
-public class RCC_CarSelectionExample : MonoBehaviour {
+public class RCC_CarSelectionExample : Singleton<RCC_CarSelectionExample> {
 
     private List<RCC_CarControllerV3> _spawnedVehicles = new List<RCC_CarControllerV3>();       // Our spawned vehicle list. No need to instantiate same vehicles over and over again. 
 
@@ -29,8 +30,10 @@ public class RCC_CarSelectionExample : MonoBehaviour {
     public string nextScene;        //  Name of the target scene when we select the vehicle.
     
     [SerializeField] private Button _interactButton;
+    [SerializeField] private TMP_Text _money;
     private Image _interactButtonImage;
     private Text _interactButtonText;
+    private bool _canSelect;
 
     private void Start() {
 
@@ -40,16 +43,29 @@ public class RCC_CarSelectionExample : MonoBehaviour {
 
         // First, we are instantiating all vehicles and store them in _spawnedVehicles list.
         CreateVehicles();
-
-        _interactButton.onClick.AddListener(SelectVehicle);
+        
         _interactButtonImage = _interactButton.GetComponent<Image>();
         _interactButtonText = _interactButton.GetComponentInChildren<Text>();
+        
+        UpdateButton();
+        UpdateMoneyText(Shop.Instance.playerBalance);
     }
     
     private void CanSelectVehicle()
     {
         _interactButtonImage.color = Color.green;
         _interactButtonText.text = "Select";
+        _interactButton.onClick.RemoveAllListeners();
+        _interactButton.onClick.AddListener(SelectVehicle);
+        _canSelect = true;
+    }
+    private void NeedToBuyCar()
+    {
+        _interactButtonImage.color = Color.yellow;
+        _interactButtonText.text = Shop.Instance.GetPrice(selectedIndex).ToString();
+        _interactButton.onClick.RemoveAllListeners();
+        _interactButton.onClick.AddListener(() => Shop.Instance.PurchaseCar(selectedIndex));
+        _canSelect = false;
     }
 
     private void OnDestroy()
@@ -93,16 +109,29 @@ public class RCC_CarSelectionExample : MonoBehaviour {
     public void NextVehicle() {
 
         selectedIndex++;
-        if (selectedIndex == 1)
-        {
-            CanSelectVehicle();
-        }
+
+        
         // If index exceeds maximum, return to 0.
         if (selectedIndex > _spawnedVehicles.Count - 1)
             selectedIndex = 0;
 
         SpawnVehicle();
+        _interactButtonText.text = Shop.Instance.GetPrice(selectedIndex).ToString();
+        
+        UpdateButton();
+    }
 
+    public void UpdateButton()
+    {
+        if (Shop.Instance.CheckBoughtCar(selectedIndex))
+            CanSelectVehicle();
+        else
+            NeedToBuyCar();
+    }
+
+    public void UpdateMoneyText(int money)
+    {
+        _money.text = money.ToString();
     }
 
     /// <summary>
@@ -111,17 +140,16 @@ public class RCC_CarSelectionExample : MonoBehaviour {
     public void PreviousVehicle() {
 
         selectedIndex--;
-        //check you have car
-        if (selectedIndex == 1)
-        {
-            CanSelectVehicle();
-        }
         
         // If index is below 0, return to maximum.
         if (selectedIndex < 0)
             selectedIndex = _spawnedVehicles.Count - 1;
 
         SpawnVehicle();
+        
+        _interactButtonText.text = Shop.Instance.GetPrice(selectedIndex).ToString();
+        
+        UpdateButton();
 
     }
 
@@ -147,9 +175,6 @@ public class RCC_CarSelectionExample : MonoBehaviour {
     /// </summary>
     public void SelectVehicle() {
         
-        //check
-        //RCC.RegisterPlayerVehicle(_spawnedVehicles[selectedIndex]);
-
         if (nextScene != "")
             OpenScene();
         
