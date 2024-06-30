@@ -50,7 +50,7 @@ public class RCC_SceneManager : RCC_Singleton<RCC_SceneManager> {
         //	Terrain data.
         public Terrain terrain;
         public TerrainData mTerrainData;
-        public PhysicMaterial terrainCollider;
+        public PhysicsMaterial terrainCollider;
         public int alphamapWidth;
         public int alphamapHeight;
 
@@ -607,7 +607,7 @@ public class RCC_SceneManager : RCC_Singleton<RCC_SceneManager> {
 
         if (activePlayerVehicle) {
 
-            activePlayerVehicle.rigid.velocity = Vector3.zero;
+            activePlayerVehicle.rigid.linearVelocity = Vector3.zero;
             activePlayerVehicle.rigid.angularVelocity = Vector3.zero;
 
             activePlayerVehicle.transform.position = position;
@@ -637,7 +637,7 @@ public class RCC_SceneManager : RCC_Singleton<RCC_SceneManager> {
 
         if (vehicle) {
 
-            vehicle.rigid.velocity = Vector3.zero;
+            vehicle.rigid.linearVelocity = Vector3.zero;
             vehicle.rigid.angularVelocity = Vector3.zero;
 
             vehicle.transform.position = position;
@@ -670,7 +670,7 @@ public class RCC_SceneManager : RCC_Singleton<RCC_SceneManager> {
 
             timer -= Time.deltaTime;
             vehicle.canControl = false;
-            vehicle.rigid.velocity = new Vector3(0f, vehicle.rigid.velocity.y, 0f);
+            vehicle.rigid.linearVelocity = new Vector3(0f, vehicle.rigid.linearVelocity.y, 0f);
             vehicle.rigid.angularVelocity = Vector3.zero;
             yield return null;
 

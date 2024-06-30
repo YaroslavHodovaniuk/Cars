@@ -393,7 +393,7 @@ public class RCC_AICarController : MonoBehaviour {
         }
 
         // If unable to move forward, puts the gear to R.
-        if (carController.speed <= 5 && transform.InverseTransformDirection(carController.rigid.velocity).z <= 1f)
+        if (carController.speed <= 5 && transform.InverseTransformDirection(carController.rigid.linearVelocity).z <= 1f)
             resetTime += Time.deltaTime;
 
         //  If car is stucked for 2 seconds, reverse now.

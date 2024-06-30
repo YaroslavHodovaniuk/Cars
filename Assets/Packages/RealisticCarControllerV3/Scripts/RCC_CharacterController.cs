@@ -48,7 +48,7 @@ public class RCC_CharacterController : MonoBehaviour {
 
         //  Getting steer input.
         steerInput = Mathf.Lerp(steerInput, carController.steerInput, Time.deltaTime * 5f);
-        directionInput = carRigid.transform.InverseTransformDirection(carRigid.velocity).z;
+        directionInput = carRigid.transform.InverseTransformDirection(carRigid.linearVelocity).z;
         impactInput -= Time.deltaTime * 5f;
 
         //  Clamping impact input.
