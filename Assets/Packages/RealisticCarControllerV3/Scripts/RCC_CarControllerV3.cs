@@ -24,7 +24,6 @@ public class RCC_CarControllerV3 : RCC_Core {
     public bool canControl = true;              // Enables / Disables controlling the vehicle. If enabled, vehicle can receive all inputs from the InputManager.
     public bool isGrounded = false;             // Is vehicle grounded completely now?
     public bool overrideBehavior = false; //	Vehicle won't be affected by selected behavior in RCC Settings if override is selected.
-    public int lvl = 0;
     
     #region Wheels
     // Wheel models of the vehicle.
