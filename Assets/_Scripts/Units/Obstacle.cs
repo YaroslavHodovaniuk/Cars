@@ -14,7 +14,7 @@ public class Obstacle : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<Player>(out var player))
         {
-            if(_lvlToDestroy < player.Lvl)
+            if(_lvlToDestroy <= player.Lvl)
             {
                 player.HP -= _damage;
                 StartCoroutine(CreateExplosion());
@@ -28,5 +28,7 @@ public class Obstacle : MonoBehaviour
         yield return new WaitForSeconds(_delay);
         if(_explosion != null)
             Instantiate(_explosion);
+        Destroy(gameObject);
+        Debug.Log("destroed");
     }
 }

@@ -32,7 +32,7 @@ public class RCC_CarSelectionExample : Singleton<RCC_CarSelectionExample> {
     [SerializeField] private Button _interactButton;
     [SerializeField] private TMP_Text _money;
     private Image _interactButtonImage;
-    private Text _interactButtonText;
+    private TMP_Text _interactButtonText;
     private bool _canSelect;
 
     private void Start() {
@@ -45,7 +45,7 @@ public class RCC_CarSelectionExample : Singleton<RCC_CarSelectionExample> {
         CreateVehicles();
         
         _interactButtonImage = _interactButton.GetComponent<Image>();
-        _interactButtonText = _interactButton.GetComponentInChildren<Text>();
+        _interactButtonText = _interactButton.GetComponentInChildren<TMP_Text>();
         
         UpdateButton();
         UpdateMoneyText(Shop.Instance.playerBalance);
