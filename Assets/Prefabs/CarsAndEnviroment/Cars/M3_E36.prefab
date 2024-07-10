@@ -621,7 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lvl: 2
-  HP: 0
+  HP: 800
 --- !u!1 &103758
 GameObject:
   m_ObjectHideFlags: 0

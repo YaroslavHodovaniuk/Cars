@@ -31,6 +31,8 @@ public class RCC_CarSelectionExample : Singleton<RCC_CarSelectionExample> {
     
     [SerializeField] private Button _interactButton;
     [SerializeField] private TMP_Text _money;
+    [SerializeField] private StatsUI _statsUI;
+    
     private Image _interactButtonImage;
     private TMP_Text _interactButtonText;
     private bool _canSelect;
@@ -62,7 +64,7 @@ public class RCC_CarSelectionExample : Singleton<RCC_CarSelectionExample> {
     private void NeedToBuyCar()
     {
         _interactButtonImage.color = Color.yellow;
-        _interactButtonText.text = Shop.Instance.GetPrice(selectedIndex).ToString();
+        _interactButtonText.text = "Buy: " + Shop.Instance.GetPrice(selectedIndex).ToString();
         _interactButton.onClick.RemoveAllListeners();
         _interactButton.onClick.AddListener(() => Shop.Instance.PurchaseCar(selectedIndex));
         _canSelect = false;
@@ -82,7 +84,7 @@ public class RCC_CarSelectionExample : Singleton<RCC_CarSelectionExample> {
 
             // Spawning the vehicle with no controllable, no player, and engine off. We don't want to let player control the vehicle while in selection menu.
             RCC_CarControllerV3 spawnedVehicle = RCC.SpawnRCC(RCC_DemoVehicles.Instance.vehicles[i], spawnPosition.position, spawnPosition.rotation, false, false, false);
-
+            
             // Disabling spawned vehicle. 
             spawnedVehicle.gameObject.SetActive(false);
 
@@ -165,6 +167,9 @@ public class RCC_CarSelectionExample : Singleton<RCC_CarSelectionExample> {
         // And enabling only selected vehicle.
         _spawnedVehicles[selectedIndex].gameObject.SetActive(true);
 
+        var player = _spawnedVehicles[selectedIndex].GetComponent<Player>();
+        _statsUI.UpdateStats(player.Lvl, player.HP);
+        
         //		RCC_SceneManager.Instance.RegisterPlayer (_spawnedVehicles [selectedIndex], false, false);
         RCC_SceneManager.Instance.activePlayerVehicle = _spawnedVehicles[selectedIndex];
 
