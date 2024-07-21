@@ -201,6 +201,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _explosion: {fileID: 0}
   _delay: 0
+  _lvlToDestroy: 1
+  _damage: 1
+  _toDestroy: {fileID: 8845417393699481718}
 --- !u!23 &1696990268643618868 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 1f8f085d22e86414594fd87b5166bafc,

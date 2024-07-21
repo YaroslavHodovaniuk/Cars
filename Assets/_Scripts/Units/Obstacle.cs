@@ -9,6 +9,7 @@ public class Obstacle : MonoBehaviour
     [SerializeField] private int _delay;
     [SerializeField] private int _lvlToDestroy;
     [SerializeField] private int _damage;
+    [SerializeField] private GameObject _toDestroy;
     
     private void OnCollisionEnter(Collision other)
     {
@@ -28,7 +29,7 @@ public class Obstacle : MonoBehaviour
         yield return new WaitForSeconds(_delay);
         if(_explosion != null)
             Instantiate(_explosion);
-        Destroy(gameObject);
+        Destroy(_toDestroy);
         Debug.Log("destroed");
     }
 }
