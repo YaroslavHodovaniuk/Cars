@@ -5,31 +5,19 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] private GameObject _explosion;
-    [SerializeField] private int _delay;
-    [SerializeField] private int _lvlToDestroy;
     [SerializeField] private int _damage;
-    [SerializeField] private GameObject _toDestroy;
+
+    private bool _touched;
     
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.TryGetComponent<Player>(out var player))
         {
-            if(_lvlToDestroy <= player.Lvl)
-            {
-                player.HP -= _damage;
-                StartCoroutine(CreateExplosion());
-            }
-                
+            if(_touched) return;
+            
+            player.HP -= _damage;
+            _touched = true;
         }
     }
-
-    private IEnumerator CreateExplosion()
-    {
-        yield return new WaitForSeconds(_delay);
-        if(_explosion != null)
-            Instantiate(_explosion);
-        Destroy(_toDestroy);
-        Debug.Log("destroed");
-    }
+    
 }
