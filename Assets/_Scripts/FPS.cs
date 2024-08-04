@@ -8,14 +8,7 @@ public class FPS : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
     private float _deltaTime;
-
-
-    private void Start()
-    {
-        QualitySettings.vSyncCount = 1;
-        Application.targetFrameRate = 240;
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
