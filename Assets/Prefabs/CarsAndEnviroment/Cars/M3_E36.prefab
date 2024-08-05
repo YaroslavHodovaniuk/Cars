@@ -360,7 +360,7 @@ MonoBehaviour:
   antiRollRearHorizontal: 500
   antiRollVertical: 0
   COM: {fileID: 489410}
-  brakeTorque: 3000
+  brakeTorque: 3500
   downForce: 20
   speed: 0
   maxspeed: 320
@@ -398,10 +398,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   autoGenerateEngineRPMCurve: 1
-  maxEngineTorque: 425
-  maxEngineTorqueAtRPM: 5250
-  minEngineRPM: 800
-  maxEngineRPM: 7600
+  maxEngineTorque: 1000
+  maxEngineTorqueAtRPM: 6500
+  minEngineRPM: 1000
+  maxEngineRPM: 7000
   engineRPM: 0
   engineRPMRaw: 0
   engineInertia: 0.2
@@ -450,8 +450,8 @@ MonoBehaviour:
   gearShiftingDelay: 0.25
   gearShiftingThreshold: 0.8
   clutchInertia: 0.25
-  gearShiftUpRPM: 6500
-  gearShiftDownRPM: 3500
+  gearShiftUpRPM: 5250
+  gearShiftDownRPM: 3000
   changingGear: 0
   direction: 1
   launched: 0
@@ -1308,7 +1308,7 @@ GameObject:
   - component: {fileID: 7667027129326671494}
   m_Layer: 8
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

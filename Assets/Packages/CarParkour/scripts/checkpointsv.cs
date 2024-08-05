@@ -19,7 +19,7 @@ public class checkpointsv : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent<RCC_CarControllerV3>(out var carControllerV3))
+        if(other.gameObject.CompareTag("Player"))
         {
             SoundManager.instance.Play("hit");
             UiManager.v1 = transform.position;

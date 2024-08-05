@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1117704460}
   m_Layer: 8
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23988,10 +23988,10 @@ MonoBehaviour:
   antiRollRearHorizontal: 1000
   antiRollVertical: 0
   COM: {fileID: 8404315443323512415}
-  brakeTorque: 3000
-  downForce: 35
+  brakeTorque: 3500
+  downForce: 20
   speed: 0
-  maxspeed: 300
+  maxspeed: 150
   engineTorqueCurve:
     serializedVersion: 2
     m_Curve:
@@ -24026,10 +24026,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   autoGenerateEngineRPMCurve: 1
-  maxEngineTorque: 450
-  maxEngineTorqueAtRPM: 5500
+  maxEngineTorque: 1000
+  maxEngineTorqueAtRPM: 6500
   minEngineRPM: 1000
-  maxEngineRPM: 8600
+  maxEngineRPM: 7000
   engineRPM: 0
   engineRPMRaw: 0
   engineInertia: 0.2
@@ -24078,8 +24078,8 @@ MonoBehaviour:
   gearShiftingDelay: 0.35
   gearShiftingThreshold: 0.75
   clutchInertia: 0.25
-  gearShiftUpRPM: 6750
-  gearShiftDownRPM: 4250
+  gearShiftUpRPM: 5250
+  gearShiftDownRPM: 3000
   changingGear: 0
   direction: 1
   launched: 0

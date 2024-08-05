@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 7924004110304004994}
   m_Layer: 8
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8687,7 +8687,7 @@ MonoBehaviour:
   SteeringWheel: {fileID: 8152251122346110538}
   steeringWheelRotateAround: 2
   steeringWheelAngleMultiplier: 3
-  wheelTypeChoise: 0
+  wheelTypeChoise: 1
   externalController: 0
   steeringType: 0
   steerAngleCurve:
@@ -8748,36 +8748,36 @@ MonoBehaviour:
   antiRollRearHorizontal: 1000
   antiRollVertical: 0
   COM: {fileID: 8541683588143996180}
-  brakeTorque: 3000
+  brakeTorque: 3500
   downForce: 20
   speed: 0
-  maxspeed: 180
+  maxspeed: 100
   engineTorqueCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 1000
-      value: 100
-      inSlope: 0.02631579
-      outSlope: 0.02631579
+      value: 500
+      inSlope: 0.09090909
+      outSlope: 0.09090909
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 4800
-      value: 200
-      inSlope: -0.0019936217
-      outSlope: -0.0019936217
+      time: 6500
+      value: 1000
+      inSlope: -0.28787875
+      outSlope: -0.28787875
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 7000
-      value: 133.33333
-      inSlope: -0.030303033
-      outSlope: -0.030303033
+      value: 666.6667
+      inSlope: -0.6666666
+      outSlope: -0.6666666
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -8786,8 +8786,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   autoGenerateEngineRPMCurve: 1
-  maxEngineTorque: 200
-  maxEngineTorqueAtRPM: 4800
+  maxEngineTorque: 1000
+  maxEngineTorqueAtRPM: 6500
   minEngineRPM: 1000
   maxEngineRPM: 7000
   engineRPM: 0
@@ -8813,30 +8813,33 @@ MonoBehaviour:
   engineHeatRate: 1
   engineCoolRate: 1
   gears:
-  - maxRatio: 4.23
-    maxSpeed: 36
-    targetSpeedForNextGear: 27
-  - maxRatio: 2.52
-    maxSpeed: 72
-    targetSpeedForNextGear: 54
+  - maxRatio: 4.35
+    maxSpeed: 30
+    targetSpeedForNextGear: 22
+  - maxRatio: 2.5
+    maxSpeed: 60
+    targetSpeedForNextGear: 45
   - maxRatio: 1.66
-    maxSpeed: 108
-    targetSpeedForNextGear: 81
-  - maxRatio: 1.22
-    maxSpeed: 144
-    targetSpeedForNextGear: 108
+    maxSpeed: 90
+    targetSpeedForNextGear: 67
+  - maxRatio: 1.23
+    maxSpeed: 120
+    targetSpeedForNextGear: 90
   - maxRatio: 1
+    maxSpeed: 150
+    targetSpeedForNextGear: 112
+  - maxRatio: 0.85
     maxSpeed: 180
     targetSpeedForNextGear: 135
-  totalGears: 5
+  totalGears: 6
   currentGear: 0
   NGear: 0
   finalRatio: 3.23
   gearShiftingDelay: 0.35
   gearShiftingThreshold: 0.75
   clutchInertia: 0.25
-  gearShiftUpRPM: 5750
-  gearShiftDownRPM: 3500
+  gearShiftUpRPM: 5250
+  gearShiftDownRPM: 3000
   changingGear: 0
   direction: 1
   launched: 0

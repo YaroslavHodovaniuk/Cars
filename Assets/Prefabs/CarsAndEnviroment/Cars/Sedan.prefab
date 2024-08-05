@@ -4918,36 +4918,36 @@ MonoBehaviour:
   antiRollRearHorizontal: 1000
   antiRollVertical: 0
   COM: {fileID: 1322012085323006713}
-  brakeTorque: 3000
+  brakeTorque: 3500
   downForce: 20
   speed: 0
-  maxspeed: 240
+  maxspeed: 120
   engineTorqueCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 1000
-      value: 187.5
-      inSlope: 0.05357143
-      outSlope: 0.05357143
+      value: 500
+      inSlope: 0.09090909
+      outSlope: 0.09090909
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 4500
-      value: 375
-      inSlope: 0.0017857142
-      outSlope: 0.0017857142
+      time: 6500
+      value: 1000
+      inSlope: -0.28787875
+      outSlope: -0.28787875
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 7000
-      value: 250
-      inSlope: -0.05
-      outSlope: -0.05
+      value: 666.6667
+      inSlope: -0.6666666
+      outSlope: -0.6666666
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -4956,8 +4956,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   autoGenerateEngineRPMCurve: 1
-  maxEngineTorque: 375
-  maxEngineTorqueAtRPM: 4500
+  maxEngineTorque: 1000
+  maxEngineTorqueAtRPM: 6500
   minEngineRPM: 1000
   maxEngineRPM: 7000
   engineRPM: 0
@@ -5008,8 +5008,8 @@ MonoBehaviour:
   gearShiftingDelay: 0
   gearShiftingThreshold: 0.8
   clutchInertia: 0.25
-  gearShiftUpRPM: 5650
-  gearShiftDownRPM: 3250
+  gearShiftUpRPM: 5250
+  gearShiftDownRPM: 3000
   changingGear: 0
   direction: 1
   launched: 0
@@ -17030,7 +17030,7 @@ GameObject:
   - component: {fileID: 3416858562912691960}
   m_Layer: 8
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

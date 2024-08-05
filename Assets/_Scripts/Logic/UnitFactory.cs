@@ -4,6 +4,7 @@ using UnityEngine;
 public class UnitFactory : StaticInstance<UnitFactory>
 {
     [SerializeField] private Transform _spawnPosition;
+    
     public void SpawnHeroes() {
         SpawnUnit();
     }

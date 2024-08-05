@@ -19,7 +19,7 @@ public class losezone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "car" && !onetm)
+        if (other.gameObject.CompareTag("Player") && !onetm)
         {
             onetm = true;
             StartCoroutine(losegm());
