@@ -19,7 +19,7 @@ public class finishline : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="car" && !onetm)
+        if(other.gameObject.CompareTag("Player") && !onetm)
         {
             onetm = true;
             StartCoroutine(wingm());
@@ -35,7 +35,7 @@ public class finishline : MonoBehaviour
         SoundManager.instance.Play("clap");
         SoundManager.instance.Play("win");
         yield return new WaitForSeconds(4f);
-        
+        Shop.Instance.playerBalance += 1000 * FindFirstObjectByType<Player>().MoneyBoost;
         yield return new WaitForSeconds(1f);
         UiManager.instance.winpanel.SetActive(true);
     }
