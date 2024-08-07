@@ -15531,7 +15531,7 @@ MonoBehaviour:
   steeringSensitivityFactor: 0.25
   oldSteeringInput: 0
   steeringDifference: 0
-  useFuelConsumption: 1
+  useFuelConsumption: 0
   fuelTankCapacity: 62
   fuelTank: 62
   fuelConsumptionRate: 0.1

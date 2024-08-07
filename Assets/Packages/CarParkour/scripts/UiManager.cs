@@ -18,7 +18,6 @@ public class UiManager : MonoBehaviour
     public Material sky1, sky2;
 
     public static Vector3 v1, r1;
-
     private void Awake()
     {
         if (instance == null)
@@ -33,7 +32,6 @@ public class UiManager : MonoBehaviour
     void Start()
     {
         print(v1);
-        //TODO Ads init
         //Advertisements.Instance.ShowBanner(BannerPosition.BOTTOM);
         LevelText.text = "Level " + (gamemanager.instance.getLevel() + 1);
     }
@@ -74,7 +72,7 @@ public class UiManager : MonoBehaviour
 
     public void showrestart()
     {
-        //TODO Ads
+        GoogleAdsSystem.Instance.ShowInterstitialAd();
         gameplaypanel.SetActive(true);
     }
 

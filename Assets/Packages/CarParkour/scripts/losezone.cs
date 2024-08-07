@@ -30,7 +30,7 @@ public class losezone : MonoBehaviour
     {
         FindObjectOfType<RCC_CarControllerV3>().gameObject.GetComponent<RCC_CarControllerV3>().SetEngine(false);
         SoundManager.instance.Play("fail");
-        //TODO ads 
+        GoogleAdsSystem.Instance.ShowInterstitialAd();
         yield return new WaitForSeconds(1f);
         UiManager.instance.losepanel.SetActive(true);
     }

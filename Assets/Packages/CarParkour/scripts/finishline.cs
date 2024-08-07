@@ -31,11 +31,11 @@ public class finishline : MonoBehaviour
         UiManager.instance.confiti.transform.parent = transform.parent;
         UiManager.instance.confiti.transform.localPosition = new Vector3(0, 0, 0);
         UiManager.instance.confiti.SetActive(true);
-        
+        GoogleAdsSystem.Instance.ShowInterstitialAd();
         SoundManager.instance.Play("clap");
         SoundManager.instance.Play("win");
         yield return new WaitForSeconds(4f);
-        //TODO ads
+        
         yield return new WaitForSeconds(1f);
         UiManager.instance.winpanel.SetActive(true);
     }

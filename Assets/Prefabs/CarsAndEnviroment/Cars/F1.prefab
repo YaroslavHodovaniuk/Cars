@@ -16093,8 +16093,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9ec870714036844b8ef06221cd7939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lvl: 5
-  HP: 5000
+  MoneyBoost: 10
+  MaxSpeed: 300
 --- !u!1 &3433750683905628728
 GameObject:
   m_ObjectHideFlags: 0

@@ -168,7 +168,7 @@ public class RCC_CarSelectionExample : Singleton<RCC_CarSelectionExample> {
         _spawnedVehicles[selectedIndex].gameObject.SetActive(true);
 
         var player = _spawnedVehicles[selectedIndex].GetComponent<Player>();
-        _statsUI.UpdateStats(player.Lvl, player.HP);
+        _statsUI.UpdateStats(player.MaxSpeed, player.MoneyBoost);
         
         //		RCC_SceneManager.Instance.RegisterPlayer (_spawnedVehicles [selectedIndex], false, false);
         RCC_SceneManager.Instance.activePlayerVehicle = _spawnedVehicles[selectedIndex];

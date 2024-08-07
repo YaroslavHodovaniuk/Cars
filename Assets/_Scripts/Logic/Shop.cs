@@ -7,7 +7,14 @@ using UnityEngine.UI;
 public class Shop : Singleton<Shop>
 {
 
-    public int playerBalance;
+    public int playerBalance
+    {
+        get => PlayerPrefs.GetInt("PlayerBalance");
+        set
+        {
+            PlayerPrefs.SetInt("PlayerBalance", value);
+            RCC_CarSelectionExample.Instance.UpdateMoneyText(playerBalance);
+        } }
 
     private Dictionary<int, int> _carPrices = new Dictionary<int, int>()
     {

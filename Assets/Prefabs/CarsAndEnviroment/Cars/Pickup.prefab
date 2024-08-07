@@ -4008,27 +4008,27 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 1000
-      value: 175
-      inSlope: 0.05
-      outSlope: 0.05
+      value: 500
+      inSlope: 0.09090909
+      outSlope: 0.09090909
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 4500
-      value: 350
-      inSlope: 0.0016666669
-      outSlope: 0.0016666669
+      time: 6500
+      value: 1000
+      inSlope: -0.28787875
+      outSlope: -0.28787875
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 7000
-      value: 233.33333
-      inSlope: -0.046666667
-      outSlope: -0.046666667
+      value: 666.6667
+      inSlope: -0.6666666
+      outSlope: -0.6666666
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -4054,7 +4054,7 @@ MonoBehaviour:
   steeringSensitivityFactor: 1
   oldSteeringInput: 0
   steeringDifference: 0
-  useFuelConsumption: 1
+  useFuelConsumption: 0
   fuelTankCapacity: 62
   fuelTank: 62
   fuelConsumptionRate: 0.1
@@ -4248,8 +4248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9ec870714036844b8ef06221cd7939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lvl: 1
-  HP: 100
+  MoneyBoost: 1
+  MaxSpeed: 110
 --- !u!1 &5712088508835124245
 GameObject:
   m_ObjectHideFlags: 0

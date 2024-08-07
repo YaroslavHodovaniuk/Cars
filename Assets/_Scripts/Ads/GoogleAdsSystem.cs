@@ -13,8 +13,30 @@ public class GoogleAdsSystem : MonoBehaviour
     private const string InterstitialAdUnitId = "ca-app-pub-3940256099942544/1033173712";
     private const string RewardedAdUnitId = "ca-app-pub-3940256099942544/5224354917";
     
+    private static GoogleAdsSystem _instance;
+
+    
+    public static GoogleAdsSystem Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new GoogleAdsSystem();
+            }
+            return _instance;
+        }
+    }
+    
     private void Awake()
     {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
+        
         MobileAds.Initialize(status => { });
         LoadInterstitialAd();
         LoadRewardedAd();

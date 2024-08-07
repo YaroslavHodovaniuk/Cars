@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class AdRewards : MonoBehaviour
 {
-    
-    
+  [SerializeField] private Shop _shop;
     public void RewardUser(int id)
     {
         switch (id)
           {
-            
-
+            case 0:
+              _shop.playerBalance += 1000;
+              break;
             default:
               break;
     }

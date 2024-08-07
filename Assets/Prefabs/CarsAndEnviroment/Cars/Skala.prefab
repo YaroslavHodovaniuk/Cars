@@ -8751,7 +8751,7 @@ MonoBehaviour:
   brakeTorque: 3500
   downForce: 20
   speed: 0
-  maxspeed: 100
+  maxspeed: 90
   engineTorqueCurve:
     serializedVersion: 2
     m_Curve:
@@ -9028,8 +9028,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9ec870714036844b8ef06221cd7939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lvl: 1
-  HP: 50
+  MoneyBoost: 1
+  MaxSpeed: 90
 --- !u!1 &7924004110348081225
 GameObject:
   m_ObjectHideFlags: 0
@@ -14657,7 +14657,7 @@ MonoBehaviour:
   drawSkid: 1
   wheelPosition: {x: 0, y: 0, z: 0}
   wheelRotation: {x: 0, y: 0, z: 0, w: 1}
-  canPower: 1
+  canPower: 0
   powerMultiplier: 1
   canSteer: 1
   steeringMultiplier: 1
@@ -14831,7 +14831,7 @@ MonoBehaviour:
   drawSkid: 1
   wheelPosition: {x: 0, y: 0, z: 0}
   wheelRotation: {x: 0, y: 0, z: 0, w: 1}
-  canPower: 1
+  canPower: 0
   powerMultiplier: 1
   canSteer: 1
   steeringMultiplier: 1
@@ -14943,7 +14943,7 @@ MonoBehaviour:
   drawSkid: 1
   wheelPosition: {x: 0, y: 0, z: 0}
   wheelRotation: {x: 0, y: 0, z: 0, w: 1}
-  canPower: 0
+  canPower: 1
   powerMultiplier: 1
   canSteer: 0
   steeringMultiplier: 1
@@ -15055,7 +15055,7 @@ MonoBehaviour:
   drawSkid: 1
   wheelPosition: {x: 0, y: 0, z: 0}
   wheelRotation: {x: 0, y: 0, z: 0, w: 1}
-  canPower: 0
+  canPower: 1
   powerMultiplier: 1
   canSteer: 0
   steeringMultiplier: 1

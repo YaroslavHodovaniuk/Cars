@@ -1,19 +1,20 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class StatsUI : Singleton<StatsUI>
 {
-     [SerializeField] private TMP_Text _lvl;
-     [SerializeField] private TMP_Text _hp;
-     [SerializeField] private Slider _lvlSlider;
-     [SerializeField] private Slider _hpSlider;
+     [SerializeField] private TMP_Text _maxSpeed;
+     [SerializeField] private TMP_Text _moneyBoost;
+     [SerializeField] private Slider _maxSpeedSlider;
+     [SerializeField] private Slider _moneyBoostSlider;
 
-     public void UpdateStats(float lvl, float hp)
+     public void UpdateStats(float maxSpeed, float moneyBoost)
      {
-          _lvlSlider.value = lvl / 5;
-          _hpSlider.value = hp / 5000;
-          _lvl.text = lvl.ToString();
-          _hp.text = hp.ToString();
+          _maxSpeedSlider.value = maxSpeed / 300;
+          _moneyBoostSlider.value = moneyBoost / 10;
+          _maxSpeed.text = maxSpeed.ToString();
+          _moneyBoost.text = moneyBoost.ToString();
      }
 }

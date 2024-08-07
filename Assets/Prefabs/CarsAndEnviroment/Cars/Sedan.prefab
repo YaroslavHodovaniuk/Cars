@@ -4973,7 +4973,7 @@ MonoBehaviour:
   steeringSensitivityFactor: 1
   oldSteeringInput: 0
   steeringDifference: 0
-  useFuelConsumption: 1
+  useFuelConsumption: 0
   fuelTankCapacity: 62
   fuelTank: 62
   fuelConsumptionRate: 0.1
@@ -5220,8 +5220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9ec870714036844b8ef06221cd7939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lvl: 1
-  HP: 200
+  MoneyBoost: 2
+  MaxSpeed: 130
 --- !u!1 &3416858561886879355
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class Obstacle : MonoBehaviour
         {
             if(_touched) return;
             
-            player.HP -= _damage;
+            player.MaxSpeed -= _damage;
             _touched = true;
         }
     }
